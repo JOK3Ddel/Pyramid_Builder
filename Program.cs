@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace Pyramid_Builder
 {
@@ -7,30 +6,18 @@ namespace Pyramid_Builder
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
+            Console.WriteLine("Please enter the size of your shape: ");
             int pyrHeight = int.Parse(Console.ReadLine());
 
-            //Functions 
-            static string BrickLayer(int Bricks)
-            {
-                string layer = "";
+            Console.WriteLine("Please enter the symbol for your shape: ");
+            string pyrChar = Console.ReadLine();
 
-                return layer;
-            }
+            ShapeBuilder pyramid = new ShapeBuilder();
+            BorderBuilder border = new BorderBuilder();
 
-            StringBuilder Pyramid = new StringBuilder(); // build the pyramid
-
-            // append string to Pyramid
-            for(int i = pyrHeight; i > 0; i--)
-            {
-                Pyramid.AppendLine(BrickLayer(i));
-            }
-
-            var outputPyramid = Pyramid.ToString(); // outputs the built pyramid
+            Console.WriteLine(border.GenerateBorder(pyramid.buildTriangle(pyrHeight, pyrChar)));
         }
     }
-
 }
 
 // height = 3
@@ -38,3 +25,11 @@ namespace Pyramid_Builder
 // #
 // ##
 // ###
+
+//   #
+//  ##
+// ###
+
+// ###
+//  ##
+//   #
