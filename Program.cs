@@ -34,17 +34,10 @@ namespace Pyramid_Builder
                 Console.WriteLine("Please enter the (1) symbol for your shape: ");
                 pyrChar = Console.ReadLine();
 
-                try
+                while (pyrChar.Length != 1)
                 {
-                    while (pyrChar.Length != 1)
-                    {
-                        Console.WriteLine("Please enter a valid symbol amount.");
-                        pyrChar = Console.ReadLine();
-                    }
-                }
-                catch (Exception)
-                {
-                    throw;
+                    Console.WriteLine("Please enter a valid symbol amount.");
+                    pyrChar = Console.ReadLine();
                 }
 
                 Console.WriteLine(border.GenerateBorder(pyramid.buildTriangle(pyrHeight, pyrChar)));
